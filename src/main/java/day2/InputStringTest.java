@@ -33,12 +33,12 @@ public class InputStringTest {
 //            System.out.println(dan + " X " + j + " = " + (dan * j));
 //        }
 
-//        Scanner sc = new Scanner(System.in);
-//        String str = sc.nextLine();
-//        System.out.print("이름을 입력해주세요 :");
-//        int i = sc.nextLine();
-//        System.out.println("나이를 입력해주세요 :");
-//        System.out.println("출력 : 안녕하세요 " + i + "세");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("이름을 입력해주세요 :");
+        String str = sc.nextLine();
+        System.out.print("나이를 입력해주세요 :");
+        int i = sc.nextInt();
+        System.out.println("출력 : 안녕하세요 " + i + "세 " + str + "입니다.");
 
 
         // v1

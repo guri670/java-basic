@@ -19,15 +19,15 @@ public class Array {
 
         // 결론 : 배열을 사용하면 됨.
 
-//        int[] arr = {10, 20, 30, 40, 50}; //배열의 표현 방법
-//        System.out.println(arr[3]);
-//
-//        System.out.println("====================================");
-//        System.out.println(arr[2]);
-//        arr[2] = 100; //배열의 특정 위치의 값을 새로운 값으로 대입 가능.
-//        System.out.println(arr[2]);
-//        System.out.println("====================================");
-//
+        int[] arr = {10, 20, 30, 40, 50}; //배열의 표현 방법
+        System.out.println(arr[3]);
+
+        System.out.println("====================================");
+        System.out.println(arr[2]);
+        arr[2] = 100; //배열의 특정 위치의 값을 새로운 값으로 대입 가능.
+        System.out.println(arr[2]);
+        System.out.println("====================================");
+
 //        System.out.println(arr[0]);
 //        System.out.println(arr[1]);
 //        System.out.println(arr[2]);

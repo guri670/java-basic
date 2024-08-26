@@ -23,13 +23,13 @@ public class LoopHomeWork { // DoubleLoop
 //
 
         // 출력
-    /*
-    높이 : [3]
-    *
-    **
-    ***
-
-
+//
+//    높이 : [3]
+//    *
+//    **
+//    ***
+//
+//
 //        int row = 2;
 //        for (int h = 0 ; h <= row ; h++) {
 //            for (int w = 0 ; w <= h; w++) {
@@ -40,14 +40,12 @@ public class LoopHomeWork { // DoubleLoop
 
 
 
-
-
-    높이 : [5]
-    *
-    **
-    ***
-    ****
-    *****
+//    높이 : [5]
+//    *
+//    **
+//    ***
+//    ****
+//    *****
 
 //        int row = 4;
 //        for (int h = 0 ; h <= row ; h++){
@@ -58,15 +56,15 @@ public class LoopHomeWork { // DoubleLoop
 //        }
 
 
-    높이 : [7]
-
-    *
-    **
-    ***
-    ****
-    *****
-    ******
-    *******
+//    높이 : [7]
+//
+//    *
+//    **
+//    ***
+//    ****
+//    *****
+//    ******
+//    *******
 
 
 //        int row = 6;
@@ -76,26 +74,26 @@ public class LoopHomeWork { // DoubleLoop
 //            }
 //            System.out.println();
 //        }
-*/
+
 
         // 출력
-    /*
-    높이 : [3]
 
-      *
-     **
-    ***
-    */
-//    int rows = 3;
-//    for(int h = 1 ; h <= rows ; h++){ //공백출력
-//        for(int w = 1 ; w <= rows-h ; w++){
-//            System.out.print(" ");
-//        }
-//        for(int a = 1 ; a <= h ; a++){ // *출력
-//            System.out.print("*");
-//        }
-//        System.out.println();
-//    }
+//    높이 : [3]
+
+//      *
+//     **
+//    ***
+
+    int rows = 3;
+    for(int h = 1 ; h <= rows ; h++){ //공백출력
+        for(int w = 1 ; w <= rows-h ; w++){
+            System.out.print(" ");
+        }
+        for(int a = 1 ; a <= h ; a++){ // *출력
+            System.out.print("*");
+        }
+        System.out.println();
+    }
 //    높이 : [5]
 //
 //        *
@@ -141,12 +139,12 @@ public class LoopHomeWork { // DoubleLoop
 //         *
 //         **
 //         *
-        int rows = 2;
-        for(int h = 0 ; h<=rows ; h++){
-            for(int w = 1 ; w <=rows-h ; w++){
-                System.out.print("*");
-            }
-        }
+//        int rows = 2;
+//        for(int h = 0 ; h<=rows ; h++){
+//            for(int w = 1 ; w <=rows-h ; w++){
+//                System.out.print("*");
+//            }
+//        }
 
 
 
