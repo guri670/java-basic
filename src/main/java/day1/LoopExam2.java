@@ -14,18 +14,55 @@ public class LoopExam2 {
 
 현재 경기타임 time과 A팀의 득점 score가 주어질 때, 손흥민을 투입하면 A팀의 최종 득점은 몇 점인지 출력하시오.
 */
-
-
         int time = 74;
         int score = 0;
-        if (time < 90) { // 90분 전에 1골(입장하자마자 1골)
+
+        if (time >= 74) {
             score++;
-            while (time + 5 < 90) { // time 이 5증가 할때마다 score는 1씩증가.
+            while (time + 5 < 90) {
                 time += 5;
                 score++;
             }
+            System.out.println(score);
         }
-        System.out.println(score);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//        int time = 74;
+//        int score = 0;
+//        if (time < 90) { // 90분 전에 1골(입장하자마자 1골)
+//            score++;
+//            while (time + 5 < 90) { // time 이 5증가 할때마다 score는 1씩증가.
+//                time += 5;
+//                score++;
+//            }
+//        }
+//        System.out.println(score);
+
+//        int time = 74;
+//        int score = 0;
+//
+//        if (time < 90) {
+//            score++;
+//            while (time + 5 < 90) {
+//                time += 5;
+//                score++;
+//            }
+//        }
+//        System.out.println(score);
+//    }
+//}
+
 
         // a b 두 수가 주어지면 a와 b사이의 수를 오름차순 출력해주세요.
         // 오름차순은 작은 수 부터 큰수로 정렬되는 것을 말합니다.
@@ -33,19 +70,16 @@ public class LoopExam2 {
         // 오름차순 :  1, 2, 3, 4, 5
         // 내림차순 :  5, 4, 3, 2, 1
 
+//
+//        int a = 12;
+//        int b = 5;
+//
+//        if (a > b){
+//            int id = a;
+//            a = b ;
+//            b = id ;
+//
+//            for (int i = a ; i <= b; i++){
+//                System.out.println(i + "");
+//
 
-        int a = 12;
-        int b = 5;
-
-        if (a > b){
-            int id = a;
-            a = b ;
-            b = id ;
-
-            for (int i = a ; i <= b; i++){
-                System.out.println(i + "");
-            }
-        }
-
-    }
-}
