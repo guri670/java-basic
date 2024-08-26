@@ -37,11 +37,25 @@ public class Array {
 //            System.out.println(arr[i]);
 
 
-        int[] arr=  {10,20,30,40,50,60,70,80,90,100};
-        for(int j = 0 ; arr[]; j++){
-            System.out.println(arr[j]);
-        }
-        System.out.println(arr.length);//배열의 길이 정보 확인
-        //내가 저장할 값이 몇개인지 모를 때.
+//        int[] arr=  {10,20,30,40,50,60,70,80,90,100};
+//        for(int j = 0 ; arr[]; j++){
+//            System.out.println(arr[j]);
+//        }
+//        System.out.println(arr.length);//배열의 길이 정보 확인
+//      확인  //내가 저장할 값이 몇개인지 모를 때. 개수를 알아도 구체적인 값을 모를 떄.
+        //비어있는 배열을 만들어 놓고 나중에 값을 저장 할 수도 있어야함.
+
+        //10개짜리 비어있는 배열 만들기
+        int[] arr3 = {0,0,0,0,0,0,0,0,0,0};
+        int[] arr4 = new int[10];
+        System.out.println(arr3.length);//배열의 길이 정보 확인
+        System.out.println(arr4.length);
+
+        arr4[4] = 10;
+    // 숫자 배열 => 숫자만 저장 가능, 다른 타입은 불가능 (boolean, double, String, ..)
+        String[] arr6 = {"apple", "banana","orange"};
+        boolean[] arr7 = {true, false, true, true};
+        double[] arr8 = {3.14, 3.11, 5.22, 3.22};
     }
+
 }
