@@ -4,15 +4,25 @@ public class Person {
     String name;
     int age;
 
-    String lan1;
-    String lan2;
-    String lan3;
-
-    public void introduce(int i) {
-        System.out.println("안녕하세요. 저는 " + age + "살 " + name + "입니다!");
-
+    public void greeting1(int lang) {
+        if (lang == 1) {
+            System.out.println("안녕하세요");
+        } else if (lang == 2) {
+            System.out.println("하이~");
+        } else
+            System.out.println("봉쥬");
     }
-    public void greeting(lan1, lan2, lan3){
-        System.out.println(i);
+
+    public void greeting2(int lang, int loop) {
+        for (int j = 0; j <= loop; j++) {
+//            if (lang == 1) {
+//                System.out.println("안녕하세요");
+//            } else if (lang == 2) {
+//                System.out.println("하이~");
+//            } else {
+//                System.out.println("봉쥬");
+//            }
+            greeting1(lang);
+        }
     }
 }

@@ -8,23 +8,23 @@ public class InputExam {
         //반복문 강제 종료 : break
         //반복문 강제로 다음회차에 넘기기 : continue
         for (int i = 1; i < 10; i++) {
-            if(i%2 == 0){
+            if (i % 2 == 0) {
                 continue;
             }
             System.out.println(i);
 
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
 
-        while (true) {
-            System.out.print("값을 입력해주세요 : ");
-            int num = sc.nextInt();
-            if (num == 0) { // num이 0 이면 if문 실행
-                break;
+            while (true) {
+                System.out.print("값을 입력해주세요 : ");
+                int num = sc.nextInt();
+                if (num == 0) { // num이 0 이면 if문 실행
+                    break;
+                }
+                System.out.println("당신이 입력한 값은 : " + num);
             }
-            System.out.println("당신이 입력한 값은 : " + num);
+            System.out.println("프로그램이 종료되었습니다.");
         }
-        System.out.println("프로그램이 종료되었습니다.");
-    }
 //}
 
         // == 계산기 프로그램 v1 ==
@@ -70,12 +70,11 @@ public class InputExam {
                 System.out.print("두번째 숫자를 입력해주세요 :");
                 int num2 = sc.nextInt();
                 System.out.println("결과 :" + num1 + " % " + num2 + " = " + (num1 / num2));
-            } else if (i == 5) {
+            } else {
                 System.out.println("계산기 프로그램을 종료합니다.");
                 break;
-            } else {
-                System.out.println("그런 기능은 존재하지 않습니다.");
             }
         }
     }
 }
+
