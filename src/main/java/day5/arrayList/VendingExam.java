@@ -22,22 +22,22 @@ public class VendingExam {
 
                 System.out.print("음료수를 선택해주세요 : ");
                 int target = Integer.parseInt(sc.nextLine());
-                String beverage = va.selectBeverage(target);
-                if (beverage.equals("잔액 부족")) {
+                String drink = va.selectdrink(target);
+                if (drink.equals("잔액 부족")) {
                     System.out.println("잔액이 부족합니다.");
                     continue;
                 }
-                if (beverage.equals("수량 부족")) {
+                if (drink.equals("수량 부족")) {
                     System.out.println("수량이 부족합니다.");
                     continue;
                 }
 
-                System.out.println(beverage + "을/를 뽑으셨습니다.");
+                System.out.println(drink + "을/를 뽑으셨습니다.");
                 int remainder = va.getRemainder();
                 System.out.println("잔액은 " + remainder + " 원입니다.");
 
             } else if (menu == 3) {
-                va.printBeverages();
+                va.printdrink();
             } else if (menu == 4) {
                 int remainder = va.getRemainder();
                 System.out.println("현재 잔액은 " + remainder + "원 입니다.");

@@ -34,7 +34,7 @@ public class VendingArrayList {
         remainder += money;
     }
 
-    public String selectBeverage(int target) {
+    public String selectdrink(int target) {
         if (prices.get(target) > remainder) {
             return "잔액 부족";
         }
@@ -47,7 +47,7 @@ public class VendingArrayList {
         return drink.get(target);
     }
 
-    public void printBeverages() { // 3
+    public void printdrink() { // 3
         System.out.println("== 음료수 목록 ==");
         for (int i = 0; i < drink.size(); i++) {
             System.out.println(i + ". " + drink.get(i) + " : " + prices.get(i) + "원, " + "남은수량 : " + quantities.get(i));
