@@ -13,19 +13,19 @@ public class VendingArrayList {
 //    }}
 
     ArrayList<String> drink = new ArrayList<>() {{
-        drink.add("콜라");
-        drink.add("사이다");
-        drink.add("커피");
+        add("콜라");
+        add("사이다");
+        add("커피");
     }};
     ArrayList<Integer> prices = new ArrayList<>() {{
-        prices.add(1000);
-        prices.add(1200);
-        prices.add(800);
+        add(1000);
+        add(1200);
+        add(800);
     }};
     ArrayList<Integer> quantities = new ArrayList<>() {{
-        quantities.add(1);
-        quantities.add(2);
-        quantities.add(1);
+        add(1);
+        add(2);
+        add(1);
     }};
 
     int remainder = 0;

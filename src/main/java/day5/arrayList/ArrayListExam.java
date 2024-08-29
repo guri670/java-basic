@@ -15,9 +15,6 @@ public class ArrayListExam {
         // =================================
 
         // 추가
-        // 배열 -> 추가 기능 X
-
-        //ArrayList -> 추가
         list.add(1);
         list.add(2);
 
