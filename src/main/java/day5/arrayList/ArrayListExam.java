@@ -43,9 +43,6 @@ public class ArrayListExam {
         System.out.println(list.get(0));
 
         //삭제
-
-        // 배열 -> 삭제는 지원하지 않음.
-
         // ArrayList
         System.out.println(list.get(0));
         System.out.println(list.get(1));

@@ -1,10 +1,10 @@
-//package day5.homework;
-//
-//import day5.arrayList.VendingArrayList;
-//
-//import java.util.Scanner;
-//
-//public class VendingMachine {
+package day5.homework;
+
+import day5.arrayList.VendingArrayList;
+
+import java.util.Scanner;
+
+public class VendingMachine {
 //    Scanner sc = new Scanner(System.in);
 //    VendingArrayList va = new VendingArrayList();
 //
@@ -47,6 +47,6 @@
 //            break;
 //        }
 //    }
-//}
+}
 
 
