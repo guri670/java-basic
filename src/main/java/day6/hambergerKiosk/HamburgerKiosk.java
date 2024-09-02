@@ -69,22 +69,24 @@ public class HamburgerKiosk {
                 ks.dCart.add(drinks);
 
             } else if (menu == 4) {
-                System.out.println("어떤 메뉴를 취소하겠습니까?\n 1. 버거 \n 2. 사이드 \n 3. 음료수 \n 선택 : ");
+                System.out.print("어떤 메뉴를 취소하겠습니까?\n 1. 버거 \n 2. 사이드 \n 3. 음료수 \n 선택 : ");
                 int selectCancel = Integer.parseInt(sc.nextLine());
                 if (selectCancel == 1){
-                    System.out.print("품목을 선택해주세요.");
-                    for(int i =0 ; i < ks.burgerCart.size(); i++){
-                        System.out.println(i+1+". " +ks.burgerCart.get(i).name);
+                    System.out.println("품목을 선택해주세요.");
+                    for(int i =0 ; i < ks.burgerCart.size(); i++) {
+                        System.out.println(i + 1 + ". " + ks.burgerCart.get(i).name);
+                    }
+                        System.out.print("선택 : ");
                         int selectCancelBurger = Integer.parseInt(sc.nextLine());
                         Hamburgers hamburgers = ks.burgerCart.get(selectCancelBurger-1);
                         System.out.println(ks.burgerCart.get(selectCancelBurger-1));
                     }
                 }
-            } else if (menu == 5) {
-                // 주문하기
-            } else {
-                break;
+//            } else if (menu == 5) {
+//                // 주문하기
+//            } else {
+//                break;
             }
         }
     }
-}
+
