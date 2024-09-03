@@ -1,6 +1,6 @@
 package day7.polymorphism;
 
-public class PolymorpismExam {
+public class  PolymorpismExam {
     public static void main(String[] args) {
         Warrior warrior1 = new Warrior();
 

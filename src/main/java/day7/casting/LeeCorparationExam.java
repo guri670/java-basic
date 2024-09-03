@@ -13,7 +13,7 @@ public class LeeCorparationExam {
     }
 }
 class LeeCorp {
-    JavaDeveloper jdeveloper;
+    JavaDeveloper jdeveloper; // int age;
     PythonDeveloper pdeveloper;
     public void java() {
         jdeveloper.java();
