@@ -74,44 +74,53 @@ public class AppRequireProject {
         text.setIndex(newindex);
         System.out.println(updatei + "번 게시물이 수정되었습니다.");
     }
-}
 
-public void deleteText(Scanner sc) {
-    System.out.println("명령어 : delete");
-    System.out.print("삭제할 게시물 번호 : ");
-    int deletei = Integer.parseInt(sc.nextLine());
-    if (deletei <= 0 || deletei >= texts.size()) {
-        System.out.println("없는 게시물 번호입니다.");
-    } else {
-        texts.remove(deletei - 1);
+
+    public void deleteText(Scanner sc) {
+        System.out.println("명령어 : delete");
+        System.out.print("삭제할 게시물 번호 : ");
+        int deletei = Integer.parseInt(sc.nextLine());
+
+        Text text = findTextbyId(deletei);
+        if (text == null) {
+            System.out.println("없는 게시물 번호입니다.");
+            return;
+        }
+
+        texts.remove(text);
         System.out.println(deletei + "번 게시물이 삭제되었습니다.");
 
     }
-}
 
-public void detailText(Scanner sc) {
-    System.out.println("명령어 : detail");
-    System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
-    int detaili = Integer.parseInt(sc.nextLine());
-    if (detaili < 0 || detaili >= texts.size()) {
-        System.out.println("존재하지 않는 게시물 번호입니다.");
-    } else {
-        System.out.println("==================");
-        System.out.printf("번호 : %d\n", texts.get(detaili).getTextnumid());
-        System.out.printf("제목 : %s\n", texts.get(detaili).getTitle());
-        System.out.printf("내용 : %s\n", texts.get(detaili).getIndex());
 
-    }
-}
+    public void detailText(Scanner sc) {
+        System.out.println("명령어 : detail");
+        System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
+        int detaili = Integer.parseInt(sc.nextLine());
 
-public Text findTextbyId(int id) {
-    for (Text text : texts) {
-        if (text.getTextnumid() == id) {
-            return text;
+        Text text = findTextbyId(detaili);
+        if (text == null) {
+            System.out.println("존재하지 않는 게시물 번호입니다.");
+            return;
         }
+
+        System.out.println("==================");
+        System.out.printf("번호 : %d\n", text.getTextnumid());
+        System.out.printf("제목 : %s\n", text.getTitle());
+        System.out.printf("내용 : %s\n", text.getIndex());
+
+
     }
-    return null;
+
+    public Text findTextbyId(int id) {
+        for (Text text : texts) {
+            if (text.getTextnumid() == id) {
+                return text;
+            }
+        }
+        return null;
+    }
 }
-}
+
 
 
