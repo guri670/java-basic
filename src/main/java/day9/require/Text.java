@@ -7,15 +7,21 @@ public class Text {
     private int textnumid;
     private String title;
     private String index;
+    private String textWriteTime;
 
-    public Text(int textnumid, String title, String index) {
+    public Text(int textnumid, String title, String index, String textWriteTime) {
         this.textnumid = textnumid;
         this.title = title;
         this.index = index;
+        this.textWriteTime = textWriteTime;
     }
 
     public int getTextnumid() {
         return textnumid;
+    }
+
+    public void setTextnumid(int textnumid) {
+        this.textnumid = textnumid;
     }
 
     public String getTitle() {
@@ -32,5 +38,13 @@ public class Text {
 
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    public String getTextWriteTime() {
+        return textWriteTime;
+    }
+
+    public void setTextWriteTime(String textWriteTime) {
+        this.textWriteTime = textWriteTime;
     }
 }

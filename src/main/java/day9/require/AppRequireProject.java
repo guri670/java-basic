@@ -1,5 +1,7 @@
 package day9.require;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,7 +39,14 @@ public class AppRequireProject {
         System.out.print("게시물 내용을 입력해주세요 : ");
         String index = sc.nextLine();
 
-        Text text = new Text(textnumid, title, index); // 비어있는 객체 생성
+        // 현재 날짜와 시간 가져오기
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        // 원하는 포맷 지정하기
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+        // 포맷 적용하여 출력하기
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        Text text = new Text(textnumid, title, index, formattedDateTime); // 비어있는 객채 생성
         texts.add(text);
         System.out.println("게시물이 등록되었습니다.");
         textnumid++;
@@ -108,6 +117,7 @@ public class AppRequireProject {
         System.out.printf("번호 : %d\n", text.getTextnumid());
         System.out.printf("제목 : %s\n", text.getTitle());
         System.out.printf("내용 : %s\n", text.getIndex());
+        System.out.printf("등록날짜 : %s\n", text.getTextWriteTime());
 
 
     }
