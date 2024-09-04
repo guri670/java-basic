@@ -7,7 +7,18 @@ import java.util.Scanner;
 
 public class AppRequireProject {
     ArrayList<Text> texts = new ArrayList<>();
-    int textnumid = 1;
+        int textnumid = 4;
+
+    public AppRequireProject() {
+        Text t1 = new Text(1, "안녕하세요 반갑습니다. java 공부중이에요.", "내용없음", getTextWriteTime());
+        Text t2 = new Text(2, "java 질문좀 할게요 ~.", "내용없음", getTextWriteTime());
+        Text t3 = new Text(3, "정처기 따야되나요?", "내용없음", getTextWriteTime());
+
+        texts.add(t1);
+        texts.add(t2);
+        texts.add(t3);
+    }
+
 
     public void run() {
         Scanner sc = new Scanner(System.in);
@@ -39,14 +50,8 @@ public class AppRequireProject {
         System.out.print("게시물 내용을 입력해주세요 : ");
         String index = sc.nextLine();
 
-        // 현재 날짜와 시간 가져오기
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        // 원하는 포맷 지정하기
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
-        // 포맷 적용하여 출력하기
-        String formattedDateTime = currentDateTime.format(formatter);
 
-        Text text = new Text(textnumid, title, index, formattedDateTime); // 비어있는 객채 생성
+        Text text = new Text(textnumid, title, index, getTextWriteTime()); // 비어있는 객채 생성
         texts.add(text);
         System.out.println("게시물이 등록되었습니다.");
         textnumid++;
@@ -129,6 +134,18 @@ public class AppRequireProject {
             }
         }
         return null;
+    }
+
+    public String getTextWriteTime() {
+
+        // 현재 날짜와 시간 가져오기
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        // 원하는 포맷 지정하기
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+        // 포맷 적용하여 출력하기
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        return formattedDateTime ;
     }
 }
 
