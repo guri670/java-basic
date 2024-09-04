@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class AppRequireProject {
     ArrayList<Text> texts = new ArrayList<>();
-        int textnumid = 4;
+    int textnumid = 4;
 
     public AppRequireProject() {
         Text t1 = new Text(1, "안녕하세요 반갑습니다. java 공부중이에요.", "내용없음", getTextWriteTime());
@@ -40,6 +40,8 @@ public class AppRequireProject {
                 deleteText(sc);
             } else if (command.equals("detail")) {
                 detailText(sc);
+            } else if (command.equals("search")) {
+                searchText(sc);
             }
         }
     }
@@ -127,6 +129,21 @@ public class AppRequireProject {
 
     }
 
+    public void searchText(Scanner sc) {
+        System.out.println("명령어 : search");
+        System.out.print("검색 키워드를 입력해주세요 : ");
+        String keyword = sc.nextLine().toLowerCase();
+
+        if (contain.equals(sc.nextLine())) {
+            System.out.println("==================");
+            for (Text text : texts) {
+
+                System.out.println("==================");
+
+            }
+        }
+    }
+
     public Text findTextbyId(int id) {
         for (Text text : texts) {
             if (text.getTextnumid() == id) {
@@ -135,6 +152,11 @@ public class AppRequireProject {
         }
         return null;
     }
+
+    public String contain(String keyWord) {
+        return keyWord;
+    }
+
 
     public String getTextWriteTime() {
 
@@ -145,7 +167,7 @@ public class AppRequireProject {
         // 포맷 적용하여 출력하기
         String formattedDateTime = currentDateTime.format(formatter);
 
-        return formattedDateTime ;
+        return formattedDateTime;
     }
 }
 
