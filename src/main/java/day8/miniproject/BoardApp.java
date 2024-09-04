@@ -1,16 +1,9 @@
 //package day8.miniproject;
 //
-//import java.util.ArrayList;
 //import java.util.Scanner;
 //
-//public class PracticeProject {
-//
-//    // main 메서드와 findPostId 메서드가 같이 사용해야 하므로 main 밖으로 뺴주고 static을 붙여줌
-//// static은 공유 목적. 자바에서 기본은 non-static
-//// main은 무조건 static을 붙여야해서 핵심로직은 main에 작성하지 않는다.
-//    static ArrayList<Post> posts = new ArrayList<>();
-//
-//    public static void main(String[] args) {
+//public class BoardApp {
+//    public void start(){
 //        Scanner sc = new Scanner(System.in);
 //        int lastestId = 1; // 가장 최신의 id값. id값의 고유성을 유지하기 위해 1씩 증가시킬 계획임.
 //
@@ -148,7 +141,5 @@
 //        }
 //        return null; //원하는 결과값이 없으면 null를 출력하며 없다라고
 //    }
+//    }
 //}
-//
-
-
