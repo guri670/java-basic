@@ -128,8 +128,27 @@ public class AppRequireProject {
         System.out.printf("내용 : %s\n", text.getIndex());
         System.out.printf("등록날짜 : %s\n", text.getTextWriteTime());
         System.out.printf("조회수 : %d\n", text.getTextView());
+        System.out.println("==================");
 
+        while (true) {
+            System.out.println("상세보기 기능을 선택해주세요 (1. 댓글등록, 2. 추천, 3. 수정, 4, 삭제, 5.목록으로)");
+            int detailfuntioni = Integer.parseInt(sc.nextLine());
 
+            if (detailfuntioni == 1) {
+                System.out.println("[댓글기능]");
+            } else if (detailfuntioni == 2) {
+                System.out.println("[추천기능]");
+            } else if (detailfuntioni == 3) {
+                System.out.println("[수정기능]");
+            } else if (detailfuntioni == 4) {
+                System.out.println("[삭제기능]");
+            } else if (detailfuntioni == 5) {
+                System.out.println("[목록으로]");
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+            }
+        }
     }
 
     public void searchText(Scanner sc) {
@@ -189,17 +208,18 @@ public class AppRequireProject {
 
         return formattedDateTime;
     }
-    public boolean isNumeric(String str){
-        try{
+
+    public boolean isNumeric(String str) {
+        try {
             Integer.parseInt(str);
             return true;
         } catch (NumberFormatException e) {
             return false;
-            }
         }
     }
-
-
 }
+
+
+
 
 
