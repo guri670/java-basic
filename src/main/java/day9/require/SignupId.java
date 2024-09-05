@@ -1,9 +1,9 @@
 package day9.require;
 
 public class SignupId {
-    private static String userId;
-    private static String userPassword;
-    private static String userNickName;
+    private String userId;
+    private String userPassword;
+    private String userNickName;
 
     public SignupId(String userId, String userPassword, String userNickName) {
         this.userId = userId;

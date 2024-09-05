@@ -45,8 +45,10 @@ public class AppRequireProject {
                 detailText(sc);
             } else if (command.equals("search")) {
                 searchText(sc);
-            } else if (command.equals("signup")){
+            } else if (command.equals("signup")) {
                 signup(sc);
+            } else if (command.equals("login")) {
+                login(sc);
             }
         }
     }
@@ -157,11 +159,11 @@ public class AppRequireProject {
                 System.out.println("댓글이 성공적으로 등록되었습니다.");
 
             } else if (detailfuntioni == 2) {
-                System.out.println("[추천기능]");
+                System.out.println("[추천기능]"); // 기능 16
             } else if (detailfuntioni == 3) {
-                System.out.println("[수정기능]");
+                System.out.println("[수정기능]"); // 기능 15
             } else if (detailfuntioni == 4) {
-                System.out.println("[삭제기능]");
+                System.out.println("[삭제기능]"); // 기능 15
             } else if (detailfuntioni == 5) {
                 System.out.println("[목록으로]");
                 break;
@@ -204,7 +206,7 @@ public class AppRequireProject {
         }
     }
 
-    public void signup(Scanner sc) {
+    public void signup(Scanner sc) { // 기능 13
         System.out.println("==== 회원 가입을 진행합니다 ====");
         System.out.print("아이디를 입력해주세요 : ");
         String userId = sc.nextLine();
@@ -218,11 +220,63 @@ public class AppRequireProject {
         SignupId signupId = new SignupId(userId, userPassword, userNickName);
         signupIds.add(signupId);
 
+    }
 
-        String registComment = sc.nextLine();
+    public void login(Scanner sc) { // 기능 14
+        System.out.print("아이디 : ");
+        String userId = sc.nextLine();
+        System.out.print("비밀번호 : ");
+        String userPassword = sc.nextLine();
 
-        Comment comment = new Comment(registComment, getTextWriteTime());
-        comments.add(comment);
+        SignupId loggedInUser = null;
+        for (SignupId user : signupIds) {
+            if (user.getUserId().equals(userId) && user.getUserPassword().equals(userPassword)) {
+                loggedInUser = user;
+                break;
+            }
+        }
+
+        if (loggedInUser != null) {
+            System.out.println(loggedInUser.getUserNickName() + "님 환영합니다!");
+            while (true) {
+                System.out.print("명령어를 입력해주세요[" + loggedInUser.getUserId() + "("
+                        + loggedInUser.getUserNickName() + ")] : ");
+                String command = sc.nextLine();
+
+                if (command.equals("logout")) {
+                    System.out.println("로그아웃 되었습니다.");
+                    break;
+                }
+                executeCommand(command, sc);
+            }
+        } else {
+            System.out.println("비밀번호를 틀렸거나 잘못된 회원정보입니다.");
+        }
+
+    }
+
+    public void executeCommand(String command, Scanner sc) {
+//        if (command.equals("exit")) {
+//            System.out.println("프로그램을 종료합니다.");
+//            break;
+//        } else
+        if (command.equals("add")) {
+            addText(sc);
+        } else if (command.equals("list")) {
+            listText(sc);
+        } else if (command.equals("update")) {
+            updateText(sc);
+        } else if (command.equals("delete")) {
+            deleteText(sc);
+        } else if (command.equals("detail")) {
+            detailText(sc);
+        } else if (command.equals("search")) {
+            searchText(sc);
+        } else if (command.equals("signup")) {
+            signup(sc);
+        } else if (command.equals("login")) {
+            login(sc);
+        }
     }
 
     public Text findTextbyId(int id) {
@@ -249,6 +303,17 @@ public class AppRequireProject {
         String formattedDateTime = currentDateTime.format(formatter);
 
         return formattedDateTime;
+    }
+
+    public void listText() {
+        System.out.println("[게시물 목록]");
+        System.out.println("==================");
+        for (int i = 0; i < texts.size(); i++) {
+            System.out.printf("번호 : %d\n", texts.get(i).getTextnumid());
+            System.out.printf("제목 : %s\n", texts.get(i).getTitle());
+            System.out.println("==================");
+
+        }
     }
 
     public boolean isNumeric(String str) {
