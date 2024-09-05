@@ -8,12 +8,14 @@ public class Text {
     private String title;
     private String index;
     private String textWriteTime;
+    private int textView;
 
-    public Text(int textnumid, String title, String index, String textWriteTime) {
+    public Text(int textnumid, String title, String index, String textWriteTime, int textView) {
         this.textnumid = textnumid;
         this.title = title;
         this.index = index;
         this.textWriteTime = textWriteTime;
+        this.textView = textView;
     }
 
     public int getTextnumid() {
@@ -47,4 +49,17 @@ public class Text {
     public void setTextWriteTime(String textWriteTime) {
         this.textWriteTime = textWriteTime;
     }
+
+    public void increaseTextView(){
+        this.textView++;
+    }
+
+    public int getTextView() {
+        return textView;
+    }
+
+    public void setTextView(int textView) {
+        this.textView = textView;
+    }
 }
+

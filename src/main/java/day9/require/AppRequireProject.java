@@ -7,18 +7,19 @@ import java.util.Scanner;
 
 public class AppRequireProject {
     ArrayList<Text> texts = new ArrayList<>();
+
     int textnumid = 4;
 
     public AppRequireProject() {
-        Text t1 = new Text(1, "안녕하세요 반갑습니다. java 공부중이에요.", "내용없음", getTextWriteTime());
-        Text t2 = new Text(2, "java 질문좀 할게요 ~.", "내용없음", getTextWriteTime());
-        Text t3 = new Text(3, "정처기 따야되나요?", "내용없음", getTextWriteTime());
+        Text t1 = new Text(1, "안녕하세요 반갑습니다. java 공부중이에요.", "내용없음", getTextWriteTime(),0);
+        Text t2 = new Text(2, "java 질문좀 할게요 ~.", "내용없음", getTextWriteTime(),0);
+        Text t3 = new Text(3, "정처기 따야되나요?", "내용없음", getTextWriteTime(),0);
 
         texts.add(t1);
         texts.add(t2);
         texts.add(t3);
-    }
 
+    }
 
     public void run() {
         Scanner sc = new Scanner(System.in);
@@ -119,12 +120,14 @@ public class AppRequireProject {
             System.out.println("존재하지 않는 게시물 번호입니다.");
             return;
         }
+        text.increaseTextView();
 
         System.out.println("==================");
         System.out.printf("번호 : %d\n", text.getTextnumid());
         System.out.printf("제목 : %s\n", text.getTitle());
         System.out.printf("내용 : %s\n", text.getIndex());
         System.out.printf("등록날짜 : %s\n", text.getTextWriteTime());
+        System.out.printf("조회수 : %d\n", text.getTextView());
 
 
     }
@@ -132,12 +135,19 @@ public class AppRequireProject {
     public void searchText(Scanner sc) {
         System.out.println("명령어 : search");
         System.out.print("검색 키워드를 입력해주세요 : ");
-        String keyword = sc.nextLine().toLowerCase();
+        String keyWord = sc.nextLine();
 
-        if (contain.equals(sc.nextLine())) {
-            System.out.println("==================");
-            for (Text text : texts) {
+        System.out.println("==================");
 
+        for (Text text : texts) {
+            if (text.getTitle().contains(keyWord)) {
+                System.out.printf("번호 : %d\n", text.getTextnumid());
+                System.out.printf("제목 : %s\n", text.getTitle());
+
+                System.out.println("==================");
+
+            }else{
+                System.out.println("검색 결과가 없습니다.");
                 System.out.println("==================");
 
             }
@@ -153,7 +163,7 @@ public class AppRequireProject {
         return null;
     }
 
-    public String contain(String keyWord) {
+    public String contain (String keyWord) {
         return keyWord;
     }
 
@@ -170,6 +180,5 @@ public class AppRequireProject {
         return formattedDateTime;
     }
 }
-
 
 
