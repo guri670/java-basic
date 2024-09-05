@@ -5,7 +5,7 @@ public class RequireProject {
         AppRequireProject appRequireProject = new AppRequireProject();
         appRequireProject.run();
     }
-}
+} // run 생성자 static
 
 
 

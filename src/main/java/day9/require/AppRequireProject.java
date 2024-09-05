@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class AppRequireProject {
     ArrayList<Text> texts = new ArrayList<>();
+    ArrayList<Comment> comments = new ArrayList<>();
+    ArrayList<SignupId> signupIds = new ArrayList<>();
 
     int textnumid = 4;
 
@@ -130,12 +132,27 @@ public class AppRequireProject {
         System.out.printf("조회수 : %d\n", text.getTextView());
         System.out.println("==================");
 
+        for (Comment comment : comments) {
+            System.out.println("======= 댓글 =======");
+            System.out.printf("댓글 내용 : %s\n", comment.getRegistcomment());
+            System.out.printf("댓글 작성일 : %s\n", comment.getTextWriteTime());
+            System.out.println("=================");
+
+        }
+
         while (true) {
-            System.out.println("상세보기 기능을 선택해주세요 (1. 댓글등록, 2. 추천, 3. 수정, 4, 삭제, 5.목록으로)");
+            System.out.print("상세보기 기능을 선택해주세요 (1. 댓글등록, 2. 추천, 3. 수정, 4, 삭제, 5.목록으로) ");
             int detailfuntioni = Integer.parseInt(sc.nextLine());
 
             if (detailfuntioni == 1) {
-                System.out.println("[댓글기능]");
+                System.out.print("댓글 내용 : ");
+                String registComment = sc.nextLine();
+
+                Comment comment = new Comment(registComment, getTextWriteTime());
+                comments.add(comment);
+
+                System.out.println("댓글이 성공적으로 등록되었습니다.");
+
             } else if (detailfuntioni == 2) {
                 System.out.println("[추천기능]");
             } else if (detailfuntioni == 3) {
@@ -147,6 +164,7 @@ public class AppRequireProject {
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+
             }
         }
     }

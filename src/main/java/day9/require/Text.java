@@ -2,7 +2,7 @@ package day9.require;
 
 import java.util.ArrayList;
 
-public class Text {
+public class Text { // Text ArrayList
 
     private int textnumid;
     private String title;
