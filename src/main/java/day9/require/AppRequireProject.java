@@ -45,9 +45,12 @@ public class AppRequireProject {
                 detailText(sc);
             } else if (command.equals("search")) {
                 searchText(sc);
+            } else if (command.equals("signup")){
+                signup(sc);
             }
         }
     }
+
 
     public void addText(Scanner sc) {
         System.out.print("게시물 제목을 입력해주세요 : ");
@@ -199,6 +202,27 @@ public class AppRequireProject {
                 System.out.println("해당 키위드를 포함한 게시물이 없습니다.");
             }
         }
+    }
+
+    public void signup(Scanner sc) {
+        System.out.println("==== 회원 가입을 진행합니다 ====");
+        System.out.print("아이디를 입력해주세요 : ");
+        String userId = sc.nextLine();
+        System.out.print("비밀번호를 입력해주세요 : ");
+        String userPassword = sc.nextLine();
+        System.out.print("닉네임을 입력해주세요 : ");
+        String userNickName = sc.nextLine();
+        System.out.println("==== 회원가입이 완료되었습니다 ====");
+
+
+        SignupId signupId = new SignupId(userId, userPassword, userNickName);
+        signupIds.add(signupId);
+
+
+        String registComment = sc.nextLine();
+
+        Comment comment = new Comment(registComment, getTextWriteTime());
+        comments.add(comment);
     }
 
     public Text findTextbyId(int id) {
