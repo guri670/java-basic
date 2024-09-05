@@ -11,9 +11,9 @@ public class AppRequireProject {
     int textnumid = 4;
 
     public AppRequireProject() {
-        Text t1 = new Text(1, "안녕하세요 반갑습니다. java 공부중이에요.", "내용없음", getTextWriteTime(),0);
-        Text t2 = new Text(2, "java 질문좀 할게요 ~.", "내용없음", getTextWriteTime(),0);
-        Text t3 = new Text(3, "정처기 따야되나요?", "내용없음", getTextWriteTime(),0);
+        Text t1 = new Text(1, "안녕하세요 반갑습니다. java 공부중이에요.", "내용없음", getTextWriteTime(), 0);
+        Text t2 = new Text(2, "java 질문좀 할게요 ~.", "내용없음", getTextWriteTime(), 0);
+        Text t3 = new Text(3, "정처기 따야되나요?", "내용없음", getTextWriteTime(), 0);
 
         texts.add(t1);
         texts.add(t2);
@@ -54,7 +54,7 @@ public class AppRequireProject {
         String index = sc.nextLine();
 
 
-        Text text = new Text(textnumid, title, index, getTextWriteTime()); // 비어있는 객채 생성
+        Text text = new Text(textnumid, title, index, getTextWriteTime(), 0); // 비어있는 객채 생성
         texts.add(text);
         System.out.println("게시물이 등록되었습니다.");
         textnumid++;
@@ -135,21 +135,31 @@ public class AppRequireProject {
     public void searchText(Scanner sc) {
         System.out.println("명령어 : search");
         System.out.print("검색 키워드를 입력해주세요 : ");
-        String keyWord = sc.nextLine();
+        String input = sc.nextLine();
 
         System.out.println("==================");
-
-        for (Text text : texts) {
-            if (text.getTitle().contains(keyWord)) {
+        if (isNumeric(input)) {
+            int searchId = Integer.parseInt(input);
+            Text text = findTextbyId(searchId);
+            if (text != null) {
                 System.out.printf("번호 : %d\n", text.getTextnumid());
                 System.out.printf("제목 : %s\n", text.getTitle());
-
-                System.out.println("==================");
-
-            }else{
+            } else {
                 System.out.println("검색 결과가 없습니다.");
                 System.out.println("==================");
-
+            }
+        } else {
+            boolean found = false;
+            for (Text text : texts) {
+                if (text.getTitle().toLowerCase().contains(input.toLowerCase())) {
+                    System.out.printf("번호 : %d\n", text.getTextnumid());
+                    System.out.printf("제목 : %s\n", text.getTitle());
+                    System.out.println("==================");
+                    found = true;
+                }
+            }
+            if (!found) {
+                System.out.println("해당 키위드를 포함한 게시물이 없습니다.");
             }
         }
     }
@@ -163,7 +173,7 @@ public class AppRequireProject {
         return null;
     }
 
-    public String contain (String keyWord) {
+    public String contain(String keyWord) {
         return keyWord;
     }
 
@@ -179,6 +189,17 @@ public class AppRequireProject {
 
         return formattedDateTime;
     }
+    public boolean isNumeric(String str){
+        try{
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+            }
+        }
+    }
+
+
 }
 
 
