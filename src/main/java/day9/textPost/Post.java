@@ -16,6 +16,9 @@ package day9.textPost;
             this.hit = hit;
         }
 
+        public Post(String title, String body) {
+        }
+
         public void increaseHit() {
             this.hit++;
         }
