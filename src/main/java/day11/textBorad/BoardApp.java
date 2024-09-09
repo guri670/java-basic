@@ -10,9 +10,9 @@ public class BoardApp {
 
     public void run() {
         Scanner sc = new Scanner(System.in);
-        Post p1 = new Post(1, "안녕하세요 반갑습니다. 자바공부중이에요", "내용없음", getCreateDate());
-        Post p2 = new Post(2, "자바 질문좀 할게요~", "내용없음", getCreateDate());
-        Post p3 = new Post(3, "정처기 따야되나요?", "내용없음", getCreateDate());
+        Post p1 = new Post(1, "안녕하세요 반갑습니다. java공부중이에요", "내용없음", getCreateDate(), 0);
+        Post p2 = new Post(2, "java 질문좀 할게요~", "내용없음", getCreateDate(), 0);
+        Post p3 = new Post(3, "정처기 따야되나요?", "내용없음", getCreateDate(), 0);
 
         posts.add(p1);
         posts.add(p2);
@@ -34,7 +34,7 @@ public class BoardApp {
                 System.out.print("게시물 내용을 입력해주세요 : ");
                 String body = sc.nextLine();
 
-                Post post = new Post(lastestId, title, body, getCreateDate());
+                Post post = new Post(lastestId, title, body, getCreateDate(), 0);
 
                 posts.add(post);
                 System.out.println("게시물이 등록되었습니다.");
@@ -83,6 +83,7 @@ public class BoardApp {
                 }
                 posts.remove(post);
                 System.out.println("삭제가 완료되었습니다.");
+
             } else if (command.equals("detail")) {
                 System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
                 int targetId = Integer.parseInt(sc.nextLine());
@@ -91,13 +92,29 @@ public class BoardApp {
                     System.out.println("존재하지 않는 게시물 번호입니다.");
                     continue;
                 }
+                post.increaseHit();
+
                 System.out.println("===================");
                 System.out.printf("번호 : %d\n", targetId);
                 System.out.printf("제목 : %s\n", post.getTitle());
                 System.out.printf("내용 : %s\n", post.getBody());
-                System.out.printf("등록날짜 : %s \n", post.getCreateDate());
+                System.out.printf("등록날짜 : %s\n", post.getCreateDate());
+                System.out.printf("조회수 : %s\n", post.getHit());
                 System.out.println("===================");
+
+            } else if (command.equals("search")) {
+                System.out.print("검색 키워드를 입력해주세요 : ");
+                String keyword = sc.nextLine();
+
+                ArrayList<Post> searchedPostList = new ArrayList<>();
+                for(Post post : posts){
+                    if(post.getTitle().contains(keyword)){
+                        searchedPostList.add(post);
+                    }
+                }
+                printPostList(searchedPostList);
             }
+
         }
     }
 
@@ -117,7 +134,18 @@ public class BoardApp {
         String formattedDateTime = currentDateTime.format(formatter);
         return formattedDateTime;
     }
+    public void printPostList(ArrayList<Post> targetList){
+        System.out.println("===================");
+        for(Post post : targetList) {
+            System.out.printf("번호 : %d\n", post.getId());
+            System.out.printf("제목 : %s\n", post.getTitle());
+            System.out.println("작성자 : hong");
+            System.out.println("===================");
+        }
+    }
 }
+
+
 
 
 
