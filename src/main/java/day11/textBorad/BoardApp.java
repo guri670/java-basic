@@ -18,7 +18,6 @@ public class BoardApp {
         posts.add(p2);
         posts.add(p3);
 
-
         int lastestId = 4;
 
         while (true) {
@@ -77,28 +76,27 @@ public class BoardApp {
             } else if (command.equals("delete")) {
                 System.out.print("삭제할 게시물 번호 : ");
                 int targetId = Integer.parseInt(sc.nextLine());
-                for (Post post : posts) {
-                    if (post.getId() == targetId) {
-                        posts.remove(post);
-                        System.out.println("삭제가 완료되었습니다.");
-                        break;
-                    }
+                Post post = findPostById(targetId);
+                if (post == null) {
+                    System.out.println("없는 게시물 번호 입니다.");
+                    continue;
                 }
+                posts.remove(post);
+                System.out.println("삭제가 완료되었습니다.");
             } else if (command.equals("detail")) {
                 System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
                 int targetId = Integer.parseInt(sc.nextLine());
-                for (Post post : posts) {
-                    if (post == null) {
-                        System.out.println("존재하지 않는 게시물 번호입니다.");
-                    } else {
-                        System.out.println("===================");
-                        System.out.printf("번호 : %d\n", targetId);
-                        System.out.printf("제목 : %s\n", post.getTitle());
-                        System.out.printf("내용 : %s\n", post.getBody());
-                        System.out.printf("등록날짜 : %s \n", post.getCreateDate());
-                        System.out.println("===================");
-                    }
+                Post post = findPostById(targetId);
+                if (post == null) {
+                    System.out.println("존재하지 않는 게시물 번호입니다.");
+                    continue;
                 }
+                System.out.println("===================");
+                System.out.printf("번호 : %d\n", targetId);
+                System.out.printf("제목 : %s\n", post.getTitle());
+                System.out.printf("내용 : %s\n", post.getBody());
+                System.out.printf("등록날짜 : %s \n", post.getCreateDate());
+                System.out.println("===================");
             }
         }
     }
@@ -119,7 +117,8 @@ public class BoardApp {
         String formattedDateTime = currentDateTime.format(formatter);
         return formattedDateTime;
     }
-
 }
+
+
 
 
