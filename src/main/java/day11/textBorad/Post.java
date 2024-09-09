@@ -1,14 +1,16 @@
 package day11.textBorad;
 
 public class Post {
-    int Id;
-    String title;
-    String body;
+    private int Id;
+    private String title;
+    private String body;
+    private String CreateDate;
 
-    public Post(int id, String title, String body) {
-        this.Id = id;
+    public Post(int id, String title, String body, String createDate) {
+        Id = id;
         this.title = title;
         this.body = body;
+        CreateDate = createDate;
     }
 
     public int getId() {
@@ -33,5 +35,13 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getCreateDate() {
+        return CreateDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        CreateDate = createDate;
     }
 }

@@ -1,4 +1,4 @@
-package quest;
+package chaeProject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,39 +14,23 @@ public class Post implements Serializable {
     private User author;
     private int like;
 
-    public ArrayList<User> getLikedUsers() {
-        return likedUsers;
-    }
+    public ArrayList<User> getLikedUsers() {return likedUsers;}
 
-    public void setLikedUsers(ArrayList<User> likedUsers) {
-        this.likedUsers = likedUsers;
-    }
+    public void setLikedUsers(ArrayList<User> likedUsers) {this.likedUsers = likedUsers;}
 
     private ArrayList<User> likedUsers = new ArrayList<>();
 
-    public int getLike() {
-        return like;
-    }
+    public int getLike() {return like;}
 
-    public void setLike(int like) {
-        this.like = like;
-    }
+    public void setLike(int like) {this.like = like;}
 
-    public User getAuthor() {
-        return author;
-    }
+    public User getAuthor() {return author;}
 
-    public void setAuthor(User author) {
-        this.author = author;
-    }
+    public void setAuthor(User author) {this.author = author;}
 
-    public ArrayList<String> getReply() {
-        return reply;
-    }
+    public ArrayList<String> getReply() {return reply;}
 
-    public void setReply(ArrayList<String> reply) {
-        this.reply = reply;
-    }
+    public void setReply(ArrayList<String> reply) {this.reply = reply;}
 
     public String getDate() {
         return date;

@@ -1,4 +1,4 @@
-package quest;
+package chaeProject;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -395,7 +395,6 @@ public class QusetApp {
                     System.out.println("해당 게시물을 좋아합니다.");
                 }
                 displayPostDetail(post);
-
 
             } else if (detailTarget == 3) {
                 if (post.getAuthor() != null && post.getAuthor().equals(loggedInUser)) {
