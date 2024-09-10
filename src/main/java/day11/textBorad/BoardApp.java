@@ -54,11 +54,10 @@ public class BoardApp {
             } else if (command.equals("update")) {
                 System.out.print("수정할 게시물 번호 : ");
                 int targetId = Integer.parseInt(sc.nextLine());
-
-//                if(targetIdx < 1 || targetIdx > posts.size()){
-//                    System.out.println("없는 게시물 번호입니다.");
-//                    continue;
-//                }
+                if(targetId < 1 || targetId > posts.size()){
+                    System.out.println("없는 게시물 번호입니다.");
+                    continue;
+                }
                 for (Post post : posts) {
                     if (post.getId() == targetId) {
                         System.out.print("수정할 제목 : ");
